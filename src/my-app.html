@@ -58,13 +58,27 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         display: block;
         padding: 0 16px;
         text-decoration: none;
-        color: var(--app-secondary-color);
+        color: #9B9892;
         line-height: 40px;
+        font-size: 15px;
       }
 
       .drawer-list a.iron-selected {
-        color: black;
+        color: #019EE4;
         font-weight: bold;
+      }
+
+      .sidenav-header {
+        line-height: 40px;
+        padding-top: 15px;
+        font-weight: 700;
+        font-size: 16px;
+        display: block;
+        padding: 0 16px;
+      }
+
+      .divider {
+        border-bottom: 1px solid #E3E1DE
       }
     </style>
 
@@ -83,11 +97,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <app-drawer-layout fullbleed narrow="{{narrow}}">
       <!-- Drawer content -->
       <app-drawer id="drawer" slot="drawer" swipe-open="[[narrow]]">
-        <app-toolbar><h5>Basics</h5></app-toolbar>
+        <app-toolbar class="divider"></app-toolbar>
         <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
-          <a name="view1" href="[[rootPath]]view1">View One</a>
-          <a name="view2" href="[[rootPath]]view2">View Two</a>
-          <a name="view3" href="[[rootPath]]view3">View Three</a>
+          <div class="sidenav-header">Basics</div>
+          <a name="intro" href="[[rootPath]]intro">Introduction</a>
+          <a name="simple-map" href="[[rootPath]]simple-map">Simple Map</a>
+         <!-- <a name="view3" href="[[rootPath]]view3">View Three</a> -->
         </iron-selector>
       </app-drawer>
 
@@ -106,8 +121,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             attr-for-selected="name"
             fallback-selection="view404"
             role="main">
-          <my-view1 name="view1"></my-view1>
-          <my-view2 name="view2"></my-view2>
+          <my-view1 name="intro"></my-view1>
+          <my-view2 name="simple-map"></my-view2>
           <my-view3 name="view3"></my-view3>
           <my-view404 name="view404"></my-view404>
         </iron-pages>
@@ -147,7 +162,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       _routePageChanged(page) {
         // If no page was found in the route data, page will be an empty string.
         // Default to 'view1' in that case.
-        this.page = page || 'view1';
+        this.page = page || 'intro';
 
         // Close a non-persistent drawer when the page & route are changed.
         if (!this.$.drawer.persistent) {
@@ -157,7 +172,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       _pageChanged(page) {
         // Load page import on demand. Show 404 page if fails
-        const resolvedPageUrl = this.resolveUrl('my-' + page + '.html');
+        const resolvedPageUrl = this.resolveUrl(page + '.html');
         Polymer.importHref(
             resolvedPageUrl,
             null,
