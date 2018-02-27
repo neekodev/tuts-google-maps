@@ -1,11 +1,11 @@
 {
   "entrypoint": "index.html",
-  "shell": "tuts-google-maps/src/my-app.html",
+  "shell": "src/my-app.html",
   "fragments": [
-    "tuts-google-maps/src/my-view1.html",
-    "tuts-google-maps/src/my-view2.html",
-    "tuts-google-maps/src/my-view3.html",
-    "tuts-google-maps/src/my-view404.html"
+    "src/my-view1.html",
+    "src/my-view2.html",
+    "src/my-view3.html",
+    "src/my-view404.html"
   ],
   "sources": [
     "images/**/*",
