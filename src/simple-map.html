@@ -32,11 +32,22 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       .sub-header {
         border-bottom: 1px solid #ECEBE9;
       }
-      code, pre, .pre-style {
+      code.light, pre, .pre-style {
         background: #f7f7f7;
         color: #37474f;
         font: 400 100%/1 Roboto Mono,monospace;
         padding: 1px 4px;
+      }
+
+      code.dark {
+        font: 400 100%/1 Roboto Mono,monospace;
+        padding: 1px 4px;
+      }
+
+      div.code {
+        padding: 5px;
+        background-color: black; 
+        color: #D489E4
       }
     </style>
 
@@ -54,13 +65,20 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <iframe width="100%" height="700" src="//jsfiddle.net/neekodev/nxf7pfjg/embedded/html/dark/" allowpaymentrequest allowfullscreen="allowfullscreen" frameborder="0"></iframe>
         <p>There are few things to note in this code example: </p>
         <ol>
-          <li>We declare the application as HTML5 using the <code>&lt;!DOCTYPE html&gt;</code> declaration.</li>
-          <li>We create a <code>div</code> element named "map" to hold the map.</li>
-          <li>We define a JavaScript function that creates a map in the <code>div</code>.</li>
-          <li>We load the Maps JavaScript API using a <code>script</code> tag.</li>
+          <li>We declare the application as HTML5 using the <code class="light">&lt;!DOCTYPE html&gt;</code> declaration.</li>
+          <li>We create a <code class="light">div</code> element named "map" to hold the map.</li>
+          <li>We define a JavaScript function that creates a map in the <code class="light">div</code>.</li>
+          <li>We load the Maps JavaScript API using a <code class="light">script</code> tag.</li>
         </ol>
         <p>Code and steps are explained below.</p>
+
         <h4>Declaring your application as HTML5</h4>
+        <p>It is recommended that you declare a true <code class="light">&lt;!DOCTYPE html&gt;</code> within your web application. <br>
+          Within the example here, HTML 5 has been declared our application using the simple HTML 5 <code class="light">&lt;!DOCTYPE html&gt;</code> as shown below:</p>
+        <div class="code">
+          <code class="dark">&lt;!DOCTYPE html&gt;</code>
+        </div>
+        <p>Most current browsers will render content that is declared with this DOCTYPE in "standards mode" which means that your application should be more cross-browser compliant.</p>
       </div>
     </div>
   </template>
