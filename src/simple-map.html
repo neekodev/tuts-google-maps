@@ -19,16 +19,36 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         padding: 10px;
       }
+      .divider {
+        margin-bottom: 40px;  
+      }
+      .gmap {
+        height: 500px;
+        display: block;
+      }
+      .header {
+        margin-bottom: 30px;
+      }
+      .sub-header {
+        border-bottom: 1px solid #ECEBE9;
+      }
     </style>
 
     <div class="card">
-      <div class="circle">2</div>
-      <h1>View Two</h1>
-      <p>Ea duis bonorum nec, falli paulo aliquid ei eum.</p>
-      <p>Id nam odio natum malorum, tibique copiosae expetenda mel ea.Detracto suavitate repudiandae no eum. Id adhuc minim soluta nam.Id nam odio natum malorum, tibique copiosae expetenda mel ea.</p>
+      <div class="divider">
+        <h1>Simple Map</h1>
+        <p class="header">The easiest way to start learning about the Google Maps JavaScript API is to see a simple example. The following web page displays a map centered on Cebu City, Cebu, Philippines:</p>
+        <h3 class="sub-header">The Map</h3>
+        <google-map class="gmap" latitude="10.3157" longitude="123.8854" zoom="8" api-key="AIzaSyBKy2yYr2LPSCMrMm5r5-y6BqctSy5qQTo">
+        </google-map>
+      </div>
+
+      <div class="divider">
+        <h3 class="sub-header">The Code</h3>
+        <iframe width="100%" height="700" src="//jsfiddle.net/neekodev/nxf7pfjg/embedded/html/dark/" allowpaymentrequest allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+      </div>
     </div>
   </template>
-
   <script>
     class MyView2 extends Polymer.Element {
       static get is() { return 'my-view2'; }
