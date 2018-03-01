@@ -32,7 +32,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       .sub-header {
         border-bottom: 1px solid #ECEBE9;
       }
-      code.light, pre, .pre-style {
+
+      code.light {
         background: #f7f7f7;
         color: #37474f;
         font: 400 100%/1 Roboto Mono,monospace;
@@ -46,8 +47,55 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       div.code {
         padding: 5px;
-        background-color: black; 
+        background-color: #202C30; 
         color: #D489E4
+      }
+
+       pre, .pre-style {
+        background: #212121;
+        color: #eceff1;
+      }
+
+      pre, .pre-style {
+        font: 14px/20px Roboto Mono,monospace;
+        margin: 16px 0;
+        overflow-x: auto;
+        padding: 8px;
+        position: relative;
+      }
+
+      .tag {
+        color: #F32F36;
+      }
+
+      .pun, .pln {
+        color: #DFAB55;
+      }
+
+      .kwd {
+        color: #389DAB;
+      }
+
+      .lit {
+        color: #F26440;
+      }
+
+      .atv, .str {
+        color: #F8EE9B;
+      }
+
+      .atn {
+        color: #F27939;
+      }
+
+      .dec, .typ {
+        color: #D489E4;
+      }
+
+      .link {
+        color: #039be5;
+        outline: 0;
+        text-decoration: none;
       }
     </style>
 
@@ -62,7 +110,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       <div class="divider">
         <h3 class="sub-header">The Code</h3>
-        <iframe width="100%" height="700" src="//jsfiddle.net/neekodev/nxf7pfjg/embedded/html/dark/" allowpaymentrequest allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+        <pre class="prettyprint notranslate lang-html devsite-enable-open-in-jsfiddle" data-scope="map-simple" data-jsfiddle-title="Map Simple"><div class="devsite-code-button-wrapper"><div class="devsite-code-button gc-analytics-event material-icons devsite-jsfiddle-button" data-category="jsfiddle" data-label="map-simple" track-type="exampleCode" track-name="jsfiddle" data-tooltip-align="b,c" data-tooltip="Open in JSFiddle" aria-label="Open in JSFiddle" data-title="Open in JSFiddle"></div><div class="devsite-code-button gc-analytics-event material-icons devsite-dark-code-button" data-category="Site-Wide Custom Events" data-label="Dark Code Toggle" track-type="exampleCode" track-name="darkCodeToggle" data-tooltip-align="b,c" data-tooltip="Light code theme" aria-label="Dark code theme" data-title="Dark code theme"></div><div class="devsite-code-button gc-analytics-event material-icons devsite-click-to-copy-button" data-category="Site-Wide Custom Events" data-label="Click To Copy" track-type="exampleCode" track-name="clickToCopy" data-tooltip-align="b,c" data-tooltip="Click to copy" aria-label="Click to copy" data-title="Click to copy"></div></div><span class="dec">&lt;!DOCTYPE html&gt;</span><span class="pln"><br></span><span class="tag">&lt;html&gt;</span><span class="pln"><br>&nbsp; </span><span class="tag">&lt;head&gt;</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="tag">&lt;title&gt;</span><span class="pln">Simple Map</span><span class="tag">&lt;/title&gt;</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="tag">&lt;meta</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"viewport"</span><span class="pln"> </span><span class="atn">content</span><span class="pun">=</span><span class="atv">"initial-scale=1.0"</span><span class="tag">&gt;</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="tag">&lt;meta</span><span class="pln"> </span><span class="atn">charset</span><span class="pun">=</span><span class="atv">"utf-8"</span><span class="tag">&gt;</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="tag">&lt;style&gt;</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; </span><span class="com">/* Always set the map height explicitly to define the size of the div<br>&nbsp; &nbsp; &nbsp; &nbsp;* element that contains the map. */</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; </span><span class="pun">#</span><span class="pln">map </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">height</span><span class="pun">:</span><span class="pln"> </span><span class="lit">100%</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; </span><span class="pun">}</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; </span><span class="com">/* Optional: Makes the sample page fill the window. */</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; html</span><span class="pun">,</span><span class="pln"> body </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">height</span><span class="pun">:</span><span class="pln"> </span><span class="lit">100%</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">margin</span><span class="pun">:</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">padding</span><span class="pun">:</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; </span><span class="pun">}</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="tag">&lt;/style&gt;</span><span class="pln"><br>&nbsp; </span><span class="tag">&lt;/head&gt;</span><span class="pln"><br>&nbsp; </span><span class="tag">&lt;body&gt;</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"map"</span><span class="tag">&gt;&lt;/div&gt;</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="tag">&lt;script&gt;</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; </span><span class="kwd">var</span><span class="pln"> map</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; </span><span class="kwd">function</span><span class="pln"> initMap</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; map </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">Map</span><span class="pun">(</span><span class="pln">document</span><span class="pun">.</span><span class="pln">getElementById</span><span class="pun">(</span><span class="str">'map'</span><span class="pun">),</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; center</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">lat</span><span class="pun">:</span><span class="pln"> </span><span class="lit">10.3157</span><span class="pun">,</span><span class="pln"> lng</span><span class="pun">:</span><span class="pln"> </span><span class="lit">123.8854</span><span class="pun">},</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; zoom</span><span class="pun">:</span><span class="pln"> </span><span class="lit">8</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="pun">});</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; </span><span class="pun">}</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="tag">&lt;/script&gt;</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"https://maps.googleapis.com/maps/api/js?key=</span><var class="apiparam replaceable-credential" data-tooltip-align="b,c" data-tooltip="Click to insert your credentials" aria-label="Click to insert your credentials"><span class="atv">YOUR_API_KEY</span></var><span class="atv">&amp;callback=initMap"</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="atn">async</span><span class="pln"> </span><span class="atn">defer</span><span class="tag">&gt;&lt;/script&gt;</span><span class="pln"><br>&nbsp; </span><span class="tag">&lt;/body&gt;</span><span class="pln"><br></span><span class="tag">&lt;/html&gt;</span></pre>
         <p>There are few things to note in this code example: </p>
         <ol>
           <li>We declare the application as HTML5 using the <code class="light">&lt;!DOCTYPE html&gt;</code> declaration.</li>
@@ -79,6 +127,68 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <code class="dark">&lt;!DOCTYPE html&gt;</code>
         </div>
         <p>Most current browsers will render content that is declared with this DOCTYPE in "standards mode" which means that your application should be more cross-browser compliant.</p>
+
+        <h4>CSS Style Declaration</h4>
+        <p>This CSS declaration indicates that the map container
+        <code class="light">&lt;div&gt;</code>
+        (with id <code class="light">map</code>) should take up 100% of the height of the HTML
+        body. Note that we must specifically declare those percentages for
+        <code class="light">&lt;body&gt;</code> and <code class="light">&lt;html&gt;</code> as well.</p>
+        <pre class="prettyprint notranslate lang-html divider"><div class="devsite-code-button gc-analytics-event material-icons devsite-dark-code-button" data-category="Site-Wide Custom Events" data-label="Dark Code Toggle" track-type="exampleCode" track-name="darkCodeToggle" data-tooltip-align="b,c" data-tooltip="Light code theme" aria-label="Dark code theme" data-title="Dark code theme"></div><span class="tag">&lt;style&gt;</span><span class="pln"><br>&nbsp; </span><span class="pun">#</span><span class="pln">map </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">height</span><span class="pun">:</span><span class="pln"> </span><span class="lit">100%</span><span class="pun">;</span><span class="pln"><br>&nbsp; </span><span  class="pun">}</span><span class="pln"><br>&nbsp; html</span><span class="pun">,</span><span class="pln"> body </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">height</span><span class="pun">:</span><span class="pln"> </span><span class="lit">100%</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">margin</span><span class="pun">:</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">padding</span><span class="pun">:</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln"><br>&nbsp; </span><span class="pun">}</span><span class="pln"><br></span><span class="tag">&lt;/style&gt;</span></pre> 
+
+        <h4>Loading the Google Maps JavaScript API</h4>
+        <p>To load the Google Maps JavaScript API, use a <code class="light">script</code> tag like the one in the following example:</p>
+        <pre class="prettyprint notranslate lang-html"><div class="devsite-code-button-wrapper"><div class="devsite-code-button gc-analytics-event material-icons devsite-dark-code-button" data-category="Site-Wide Custom Events" data-label="Dark Code Toggle" track-type="exampleCode" track-name="darkCodeToggle" data-tooltip-align="b,c" data-tooltip="Light code theme" aria-label="Dark code theme" data-title="Dark code theme"></div><div class="devsite-code-button gc-analytics-event material-icons devsite-click-to-copy-button" data-category="Site-Wide Custom Events" data-label="Click To Copy" track-type="exampleCode" track-name="clickToCopy" data-tooltip-align="b,c" data-tooltip="Click to copy" aria-label="Click to copy" data-title="Click to copy"></div></div><span class="pln">&nbsp; &nbsp; </span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">async</span><span class="pln"> </span><span class="atn">defer</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"https://maps.googleapis.com/maps/api/js?key=</span><var class="apiparam replaceable-credential" data-tooltip-align="b,c" data-tooltip="Click to insert your credentials" aria-label="Click to insert your credentials"><span class="atv">YOUR_API_KEY</span></var><span class="atv">&amp;callback=initMap"</span><span class="tag">&gt;</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="tag">&lt;/script&gt;</span></pre>
+
+        <p>The URL contained in the <code class="light">script</code> tag is the location of a
+          JavaScript file that loads all of the symbols and definitions you need for
+          using the Maps JavaScript API. This <code class="light">script</code> tag is required.</p>
+
+        <p>The <code class="light">async</code> attribute lets the browser render the rest of your
+          website while the Maps JavaScript API loads. When the API is ready, it will
+          call the  function specified using the <code class="light">callback</code> parameter.</p>
+
+        <p class="divider">The <code class="light">key</code> parameter contains your application's API key. See
+          <a class="link" target="_blank" href="https://developers.google.com/maps/documentation/javascript/get-api-key">Get a Key</a> for more information.
+        </p>
+
+        <h4>Create the Map Container</h4>
+        <p>To hold the map, we have to create a container element. In this case, we created a <code class="light">div</code> element with id name <code class="light">map</code>. <br>
+        Note that the <code class="light">div</code> id name <code class="light">map</code> is the indicator that serves as the reference to be called for CSS and JavaScript.
+        </p>
+        <pre class="prettyprint notranslate lang-html divider"><div class="devsite-code-button-wrapper"><div class="devsite-code-button gc-analytics-event material-icons devsite-dark-code-button" data-category="Site-Wide Custom Events" data-label="Dark Code Toggle" track-type="exampleCode" track-name="darkCodeToggle" data-tooltip-align="b,c" data-tooltip="Light code theme" aria-label="Dark code theme" data-title="Dark code theme"></div><div class="devsite-code-button gc-analytics-event material-icons devsite-click-to-copy-button" data-category="Site-Wide Custom Events" data-label="Click To Copy" track-type="exampleCode" track-name="clickToCopy" data-tooltip-align="b,c" data-tooltip="Click to copy" aria-label="Click to copy" data-title="Click to copy"></div></div><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"map"</span><span class="tag">&gt;&lt;/div&gt;</span></pre>
+
+        <h4>Map Options</h4>
+        <p>
+          Set values for map initialization variables.There are two required options for every map: <code class="light">center</code> and <code class="light">zoom</code>.
+        </p>
+        <ul>
+          <li><strong>center</strong> - Under this property, we have to specify the location where we want to centre the map.</li>
+          <li><strong>latitude</strong> - This property is under center. Coordinate that specifies the north–south position of a point on the Earth's surface.</li>
+          <li><strong>longitude</strong> - This property is under center.   Coordinate that specifies the east-west position of a point on the Earth's surface.</li>
+          <li><strong>zoom</strong> - Under this property, we have to specify the zoom level of the map.</li>
+        </ul>
+        <pre class="prettyprint notranslate lang-javascript divider"><div class="devsite-code-button-wrapper"><div class="devsite-code-button gc-analytics-event material-icons devsite-dark-code-button" data-category="Site-Wide Custom Events" data-label="Dark Code Toggle" track-type="exampleCode" track-name="darkCodeToggle" data-tooltip-align="b,c" data-tooltip="Light code theme" aria-label="Dark code theme" data-title="Dark code theme"></div><div class="devsite-code-button gc-analytics-event material-icons devsite-click-to-copy-button" data-category="Site-Wide Custom Events" data-label="Click To Copy" track-type="exampleCode" track-name="clickToCopy" data-tooltip-align="b,c" data-tooltip="Click to copy" aria-label="Click to copy" data-title="Click to copy"></div></div><span class="pln">map </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">Map</span><span class="pun">(</span><span class="pln">document</span><span class="pun">.</span><span class="pln">getElementById</span><span class="pun">(</span><span class="str">'map'</span><span class="pun">),</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; center</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">lat</span><span class="pun">:</span><span class="pln"> </span><span class="pun">-</span><span class="lit">10.3157</span><span class="pun">,</span><span class="pln"> lng</span><span class="pun">:</span><span class="pln"> </span><span class="lit">123.8854</span><span class="pun">},</span><span class="pln"><br>&nbsp; zoom</span><span class="pun">:</span><span class="pln"> </span><span class="lit">8</span><span class="pln"><br></span><span class="pun">});</span></pre>
+
+        <h4>Zoom Levels</h4>
+        <p>The initial resolution at which to display the map is set by the
+          <code class="light">zoom</code> property, where zoom <code class="light">0</code>
+          corresponds to a map of the Earth fully zoomed out, and larger zoom levels
+          zoom in at a higher resolution. Specify zoom level as an integer.
+        </p>
+        <pre class="prettyprint notranslate lang-javascript"><div class="devsite-code-button-wrapper"><div class="devsite-code-button gc-analytics-event material-icons devsite-dark-code-button" data-category="Site-Wide Custom Events" data-label="Dark Code Toggle" track-type="exampleCode" track-name="darkCodeToggle" data-tooltip-align="b,c" data-tooltip="Light code theme" aria-label="Dark code theme" data-title="Dark code theme"></div><div class="devsite-code-button gc-analytics-event material-icons devsite-click-to-copy-button" data-category="Site-Wide Custom Events" data-label="Click To Copy" track-type="exampleCode" track-name="clickToCopy" data-tooltip-align="b,c" data-tooltip="Click to copy" aria-label="Click to copy" data-title="Click to copy"></div></div><span class="pln">zoom</span><span class="pun">:</span><span class="pln"> </span><span class="lit">8</span></pre>
+        <p>Map images within Google Maps and the Maps JavaScript API are broken up into map "tiles" and "zoom levels." At low zoom levels, a small set of map tiles covers a wide area; at higher zoom levels, the tiles are of higher resolution and cover a smaller area. The following list shows the approximate level of detail you can expect to see at each zoom level:</p>
+        <ul class="divider">
+          <li>1: World</li>
+          <li>5: Landmass/continent</li>
+          <li>10: City</li>
+          <li>15: Streets</li>
+          <li>20: Buildings</li>
+        </ul>
+
+        <h4>Map Object</h4>
+        <p>You can create a map by instantiating or calling the JavaScript class that represents a map called <code class="light">Map</code> class. While instantiating this class, you have to pass an HTML container to hold the map and the map options for the required map. We create a new instance of this class using the JavaScript <code class="light">new</code> operator.</p>
+        <pre class="prettyprint notranslate lang-javascript"><div class="devsite-code-button-wrapper"><div class="devsite-code-button gc-analytics-event material-icons devsite-dark-code-button" data-category="Site-Wide Custom Events" data-label="Dark Code Toggle" track-type="exampleCode" track-name="darkCodeToggle" data-tooltip-align="b,c" data-tooltip="Light code theme" aria-label="Dark code theme" data-title="Dark code theme"></div><div class="devsite-code-button gc-analytics-event material-icons devsite-click-to-copy-button" data-category="Site-Wide Custom Events" data-label="Click To Copy" track-type="exampleCode" track-name="clickToCopy" data-tooltip-align="b,c" data-tooltip="Click to copy" aria-label="Click to copy" data-title="Click to copy"></div></div><span class="pln">map </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">Map</span><span class="pun">(</span><span class="pln">document</span><span class="pun">.</span><span class="pln">getElementById</span><span class="pun">(</span><span class="str">"map"</span><span class="pun">),</span><span class="pln"> </span><span class="pun">{...});</span></pre>
       </div>
     </div>
   </template>
