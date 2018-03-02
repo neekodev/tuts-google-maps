@@ -1,0 +1,136 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="my-view6">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+
+        padding: 10px;
+      }
+      .divider {
+        margin-bottom: 40px;  
+      }
+      .gmap {
+        height: 500px;
+        display: block;
+      }
+      .header {
+        margin-bottom: 30px;
+      }
+      .sub-header {
+        border-bottom: 1px solid #ECEBE9;
+      }
+
+      code.light {
+        background: #f7f7f7;
+        color: #37474f;
+        font: 400 100%/1 Roboto Mono,monospace;
+        padding: 1px 4px;
+      }
+
+      code.dark {
+        font: 400 100%/1 Roboto Mono,monospace;
+        padding: 1px 4px;
+      }
+
+      div.code {
+        padding: 5px;
+        background-color: #202C30; 
+        color: #D489E4
+      }
+
+       pre, .pre-style {
+        background: #212121;
+        color: #eceff1;
+      }
+
+      pre, .pre-style {
+        font: 14px/20px Roboto Mono,monospace;
+        margin: 16px 0;
+        overflow-x: auto;
+        padding: 8px;
+        position: relative;
+      }
+
+      .tag {
+        color: #F32F36;
+      }
+
+      .pun, .pln {
+        color: #DFAB55;
+      }
+
+      .kwd {
+        color: #389DAB;
+      }
+
+      .lit {
+        color: #F26440;
+      }
+
+      .atv, .str {
+        color: #F8EE9B;
+      }
+
+      .atn {
+        color: #F27939;
+      }
+
+      .dec, .typ {
+        color: #D489E4;
+      }
+
+      .link {
+        color: #039be5;
+        outline: 0;
+        text-decoration: none;
+      }
+    </style>
+
+    <div class="card">
+      <div class="divider">
+        <h1>Localizing the Map</h1>
+        <p>You can customize your map for a specific country or region in the following ways:</p>
+        <ul>
+          <li>Change the default language settings.</li>
+          <li>Specify a region code, which alters the map's behavior based on a given
+            country or territory.</li>
+        </ul>
+        <p>By default, the Google Maps JavaScript API uses the user's preferred
+          language setting as specified in the browser, when displaying textual
+          information such as the names for controls, copyright notices, driving
+          directions and labels on maps. In most cases, it's preferable to respect the
+          browser setting. However, if you want the
+          Maps JavaScript API to ignore the browser's
+          language setting, you can force it to display information in a particular
+          language by adding a <code class="light">language</code> parameter to the
+          <code class="light">&lt;script&gt;</code> tag when loading the
+          Maps JavaScript API code.</p>
+          <p>The following example displays a map in Japanese and sets the region to Japan:</p>
+          <pre class="prettyprint notranslate lang-html"><div class="devsite-code-button-wrapper"><div class="devsite-code-button gc-analytics-event material-icons devsite-dark-code-button" data-category="Site-Wide Custom Events" data-label="Dark Code Toggle" track-type="exampleCode" track-name="darkCodeToggle" data-tooltip-align="b,c" data-tooltip="Light code theme" aria-label="Dark code theme" data-title="Dark code theme"></div><div class="devsite-code-button gc-analytics-event material-icons devsite-click-to-copy-button" data-category="Site-Wide Custom Events" data-label="Click To Copy" track-type="exampleCode" track-name="clickToCopy" data-tooltip-align="b,c" data-tooltip="Click to copy" aria-label="Click to copy" data-title="Click to copy"></div></div><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"https://maps.googleapis.com/maps/api/js?key=</span><var class="apiparam replaceable-credential" data-tooltip-align="b,c" data-tooltip="Click to insert your credentials" aria-label="Click to insert your credentials"><span class="atv">YOUR_API_KEY</span></var><span class="atv">&amp;language=ja&amp;region=JP"</span><span class="tag">&gt;</span><span class="pln"><br></span><span class="tag">&lt;/script&gt;</span></pre>
+          <iframe height="480px" width="100%" frameborder="0" scrolling="no" src="https://developers.google.com/maps/documentation/javascript/examples/full/map-language" allowfullscreen="">
+          </iframe>
+        </google-map>
+      </div>
+    </div>
+  </template>
+  <script>
+    class MyView6 extends Polymer.Element {
+      static get is() { return 'my-view6'; }
+    }
+
+    window.customElements.define(MyView6.is, MyView6);
+  </script>
+</dom-module>

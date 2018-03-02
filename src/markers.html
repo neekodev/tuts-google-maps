@@ -1,0 +1,213 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="my-view3">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+
+        padding: 10px;
+      }
+      .divider {
+        margin-bottom: 40px;  
+      }
+      .gmap {
+        height: 500px;
+        display: block;
+      }
+      .header {
+        margin-bottom: 30px;
+      }
+      .sub-header {
+        border-bottom: 1px solid #ECEBE9;
+      }
+
+      code.light {
+        background: #f7f7f7;
+        color: #37474f;
+        font: 400 100%/1 Roboto Mono,monospace;
+        padding: 1px 4px;
+      }
+
+      code.dark {
+        font: 400 100%/1 Roboto Mono,monospace;
+        padding: 1px 4px;
+      }
+
+      div.code {
+        padding: 5px;
+        background-color: #202C30; 
+        color: #D489E4
+      }
+
+       pre, .pre-style {
+        background: #212121;
+        color: #eceff1;
+      }
+
+      pre, .pre-style {
+        font: 14px/20px Roboto Mono,monospace;
+        margin: 16px 0;
+        overflow-x: auto;
+        padding: 8px;
+        position: relative;
+      }
+
+      .tag {
+        color: #F32F36;
+      }
+
+      .pun, .pln {
+        color: #DFAB55;
+      }
+
+      .kwd {
+        color: #389DAB;
+      }
+
+      .lit {
+        color: #F26440;
+      }
+
+      .atv, .str {
+        color: #F8EE9B;
+      }
+
+      .atn {
+        color: #F27939;
+      }
+
+      .dec, .typ {
+        color: #D489E4;
+      }
+
+      .link {
+        color: #039be5;
+        outline: 0;
+        text-decoration: none;
+      }
+    </style>
+
+    <div class="card">
+      <div class="divider">
+        <h1>Markers</h1>
+        <p>This tutorial shows you how to add a simple Google map with a marker to a web page. To mark a single location on the map, Google Maps provides markers. These markers use a standard symbol and these symbols can be customized. The following web page displays a map that marks the city of Cebu.</p>
+        <h3 class="sub-header">The Map</h3>
+        <google-map class="gmap" latitude="10.3157" longitude="123.8854" zoom="8" api-key="AIzaSyBKy2yYr2LPSCMrMm5r5-y6BqctSy5qQTo">
+          <google-map-marker latitude="10.3157" longitude="123.8854" draggable="true"></google-map-marker>
+        </google-map>
+      </div>
+
+      <div class="divider">
+        <h3 class="sub-header">The Code</h3>
+        <pre class="prettyprint notranslate lang-html devsite-enable-open-in-jsfiddle" data-scope="map_iframe" data-jsfiddle-title="Map with Marker"><div class="devsite-code-button-wrapper"><div class="devsite-code-button gc-analytics-event material-icons devsite-jsfiddle-button" data-category="jsfiddle" data-label="map_iframe" track-type="exampleCode" track-name="jsfiddle" data-tooltip-align="b,c" data-tooltip="Open in JSFiddle" aria-label="Open in JSFiddle" data-title="Open in JSFiddle"></div><div class="devsite-code-button gc-analytics-event material-icons devsite-dark-code-button" data-category="Site-Wide Custom Events" data-label="Dark Code Toggle" track-type="exampleCode" track-name="darkCodeToggle" data-tooltip-align="b,c" data-tooltip="Light code theme" aria-label="Dark code theme" data-title="Dark code theme"></div><div class="devsite-code-button gc-analytics-event material-icons devsite-click-to-copy-button" data-category="Site-Wide Custom Events" data-label="Click To Copy" track-type="exampleCode" track-name="clickToCopy" data-tooltip-align="b,c" data-tooltip="Click to copy" aria-label="Click to copy" data-title="Click to copy"></div></div><span class="dec">&lt;!DOCTYPE html&gt;</span><span class="pln"><br></span><span class="tag">&lt;html&gt;</span><span class="pln"><br>&nbsp; </span><span class="tag">&lt;head&gt;</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="tag">&lt;style&gt;</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp;</span><span class="pun">#</span><span class="pln">map </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">height</span><span class="pun">:</span><span class="pln"> </span><span class="lit">400px</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">width</span><span class="pun">:</span><span class="pln"> </span><span class="lit">100%</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp;</span><span class="pun">}</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="tag">&lt;/style&gt;</span><span class="pln"><br>&nbsp; </span><span class="tag">&lt;/head&gt;</span><span class="pln"><br>&nbsp; </span><span class="tag">&lt;body&gt;</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="tag">&lt;h3&gt;</span><span class="pln">Google Maps Marker Demo</span><span class="tag">&lt;/h3&gt;</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"map"</span><span class="tag">&gt;&lt;/div&gt;</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="tag">&lt;script&gt;</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; </span><span class="kwd">function</span><span class="pln"> initMap</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">var</span><span class="pln"> coords </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="pln">lat</span><span class="pun">:</span><span class="pln"> </span><span class="lit">10.3157</span><span class="pun">,</span><span class="pln"> lng</span><span class="pun">:</span><span class="pln"> </span><span class="lit">123.8854</span><span class="pun">};</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">var</span><span class="pln"> map </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">Map</span><span class="pun">(</span><span class="pln">document</span><span class="pun">.</span><span class="pln">getElementById</span><span class="pun">(</span><span class="str">'map'</span><span class="pun">),</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; zoom</span><span class="pun">:</span><span class="pln"> </span><span class="lit">4</span><span class="pun">,</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; center</span><span class="pun">:</span><span class="pln"> coords<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="pun">});</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">var</span><span class="pln"> marker </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">Marker</span><span class="pun">({</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; position</span><span class="pun">:</span><span class="pln"> coords</span><span class="pun">,</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; map</span><span class="pun">:</span><span class="pln"> map<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="pun">});</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; </span><span class="pun">}</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="tag">&lt;/script&gt;</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">async</span><span class="pln"> </span><span class="atn">defer</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"https://maps.googleapis.com/maps/api/js?key=</span><var class="apiparam replaceable-credential" data-tooltip-align="b,c" data-tooltip="Click to insert your credentials" aria-label="Click to insert your credentials"><span class="atv">YOUR_API_KEY</span></var><span class="atv">&amp;callback=initMap"</span><span class="tag">&gt;</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="tag">&lt;/script&gt;</span><span class="pln"><br>&nbsp; </span><span class="tag">&lt;/body&gt;</span><span class="pln"><br></span><span class="tag">&lt;/html&gt;</span></pre>
+      </div>
+
+      <div class="divider">
+        <h3 class="sub-header">How To</h3>
+        <p>There are three steps to creating a Google map with a marker on your web page.</p>
+        <ol>
+          <li>Create an HTML page</li>
+          <li>Add a map with a marker</li>
+          <li>Get an API key</li>
+        </ol>
+
+        <h4>Create an HTML page</h4>
+        <p>Here's the code for a basic HTML web page:</p>
+        <pre class="prettyprint notranslate lang-html devsite-enable-open-in-jsfiddle" data-scope="map_iframe_step1" data-jsfiddle-title="Add Map Step 1"><div class="devsite-code-button-wrapper"><div class="devsite-code-button gc-analytics-event material-icons devsite-jsfiddle-button" data-category="jsfiddle" data-label="map_iframe_step1" track-type="exampleCode" track-name="jsfiddle" data-tooltip-align="b,c" data-tooltip="Open in JSFiddle" aria-label="Open in JSFiddle" data-title="Open in JSFiddle"></div><div class="devsite-code-button gc-analytics-event material-icons devsite-dark-code-button" data-category="Site-Wide Custom Events" data-label="Dark Code Toggle" track-type="exampleCode" track-name="darkCodeToggle" data-tooltip-align="b,c" data-tooltip="Light code theme" aria-label="Dark code theme" data-title="Dark code theme"></div><div class="devsite-code-button gc-analytics-event material-icons devsite-click-to-copy-button" data-category="Site-Wide Custom Events" data-label="Click To Copy" track-type="exampleCode" track-name="clickToCopy" data-tooltip-align="b,c" data-tooltip="Click to copy" aria-label="Click to copy" data-title="Click to copy"></div></div><span class="dec">&lt;!DOCTYPE html&gt;</span><span class="pln"><br></span><span class="tag">&lt;html&gt;</span><span class="pln"><br>&nbsp; </span><span class="tag">&lt;head&gt;</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="tag">&lt;style&gt;</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; </span><span class="pun">#</span><span class="pln">map </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">width</span><span class="pun">:</span><span class="pln"> </span><span class="lit">100%</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">height</span><span class="pun">:</span><span class="pln"> </span><span class="lit">400px</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">background-color</span><span class="pun">:</span><span class="pln"> grey</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; </span><span class="pun">}</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="tag">&lt;/style&gt;</span><span class="pln"><br>&nbsp; </span><span class="tag">&lt;/head&gt;</span><span class="pln"><br>&nbsp; </span><span class="tag">&lt;body&gt;</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="tag">&lt;h3&gt;</span><span class="pln">Google Maps Marker Demo</span><span class="tag">&lt;/h3&gt;</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"map"</span><span class="tag">&gt;&lt;/div&gt;</span><span class="pln"><br>&nbsp; </span><span class="tag">&lt;/body&gt;</span><span class="pln"><br></span><span class="tag">&lt;/html&gt;</span></pre>
+
+        <strong>Understanding the code</strong>
+        <p>The code below creates an HTML page consisting of a head and a body.</p>
+        <pre class="prettyprint notranslate"><div class="devsite-code-button-wrapper"><div class="devsite-code-button gc-analytics-event material-icons devsite-dark-code-button" data-category="Site-Wide Custom Events" data-label="Dark Code Toggle" track-type="exampleCode" track-name="darkCodeToggle" data-tooltip-align="b,c" data-tooltip="Light code theme" aria-label="Dark code theme" data-title="Dark code theme"></div><div class="devsite-code-button gc-analytics-event material-icons devsite-click-to-copy-button" data-category="Site-Wide Custom Events" data-label="Click To Copy" track-type="exampleCode" track-name="clickToCopy" data-tooltip-align="b,c" data-tooltip="Click to copy" aria-label="Click to copy" data-title="Click to copy"></div></div><span class="tag">&lt;html&gt;</span><span class="pln"><br>&nbsp;</span><span class="tag">&lt;head&gt;</span><span class="pln"><br>&nbsp;</span><span class="tag">&lt;/head&gt;</span><span class="pln"><br>&nbsp;</span><span class="tag">&lt;body&gt;</span><span class="pln"><br>&nbsp;</span><span class="tag">&lt;/body&gt;</span><span class="pln"><br></span><span class="tag">&lt;/html&gt;</span></pre>
+
+        <p>You can add a heading level three above the map using the code below.</p>
+        <pre class="prettyprint notranslate"><div class="devsite-code-button-wrapper"><div class="devsite-code-button gc-analytics-event material-icons devsite-dark-code-button" data-category="Site-Wide Custom Events" data-label="Dark Code Toggle" track-type="exampleCode" track-name="darkCodeToggle" data-tooltip-align="b,c" data-tooltip="Light code theme" aria-label="Dark code theme" data-title="Dark code theme"></div><div class="devsite-code-button gc-analytics-event material-icons devsite-click-to-copy-button" data-category="Site-Wide Custom Events" data-label="Click To Copy" track-type="exampleCode" track-name="clickToCopy" data-tooltip-align="b,c" data-tooltip="Click to copy" aria-label="Click to copy" data-title="Click to copy"></div></div><span class="tag">&lt;h3&gt;</span><span class="pln">Google Maps Marker Demo</span><span class="tag">&lt;/h3&gt;</span></pre>
+
+        <p>The code below creates the container of your Google Map.</p>
+        <pre class="prettyprint notranslate"><div class="devsite-code-button-wrapper"><div class="devsite-code-button gc-analytics-event material-icons devsite-dark-code-button" data-category="Site-Wide Custom Events" data-label="Dark Code Toggle" track-type="exampleCode" track-name="darkCodeToggle" data-tooltip-align="b,c" data-tooltip="Light code theme" aria-label="Dark code theme" data-title="Dark code theme"></div><div class="devsite-code-button gc-analytics-event material-icons devsite-click-to-copy-button" data-category="Site-Wide Custom Events" data-label="Click To Copy" track-type="exampleCode" track-name="clickToCopy" data-tooltip-align="b,c" data-tooltip="Click to copy" aria-label="Click to copy" data-title="Click to copy"></div></div><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"map"</span><span class="tag">&gt;&lt;/div&gt;</span></pre>
+
+        <p>The code below defines the CSS that sets the size and color of the <code class="light">div</code>.</p>
+        <pre class="prettyprint notranslate divider"><span class="tag">&lt;style&gt;</span><span class="pln"><br>&nbsp;</span><span class="pun">#</span><span class="pln">map </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp;</span><span class="kwd">width</span><span class="pun">:</span><span class="pln"> </span><span class="lit">100%</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp;</span><span class="kwd">height</span><span class="pun">:</span><span class="pln"> </span><span class="lit">400px</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp;</span><span class="kwd">background-color</span><span class="pun">:</span><span class="pln"> grey</span><span class="pun">;</span><span class="pln"><br>&nbsp;</span><span class="pun">}</span><span class="pln"><br></span><span class="tag">&lt;/style&gt;</span></pre>
+
+        <h4>Add a Map with a Marker</h4>
+        <p>This section shows you how to load the Google Maps JavaScript API into your web page, and how to write your own JavaScript that uses the API to add a map with a marker on it.</p>
+        <pre class="prettyprint notranslate" data-scope="map_iframe_step2" data-jsfiddle-title="Add Map Step 2">
+          <span class="pln"><br></span><span class="kwd">function</span><span class="pln"> initMap</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; </span><span class="kwd">var</span><span class="pln"> coords </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="pln">lat</span><span class="pun">:</span><span class="pln"> </span><span class="lit">10.3157</span><span class="pun">,</span><span class="pln"> lng</span><span class="pun">:</span><span class="pln"> </span><span class="lit">123.8854</span><span class="pun">};</span><span class="pln"><br>&nbsp; </span><span class="kwd">var</span><span class="pln"> map </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">Map</span><span class="pun">(</span><span class="pln">document</span><span class="pun">.</span><span class="pln">getElementById</span><span class="pun">(</span><span class="str">'map'</span><span class="pun">),</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; zoom</span><span class="pun">:</span><span class="pln"> </span><span class="lit">4</span><span class="pun">,</span><span class="pln"><br>&nbsp; &nbsp; center</span><span class="pun">:</span><span class="pln"> coords<br>&nbsp; </span><span class="pun">});</span><span class="pln"><br>&nbsp; </span><span class="kwd">var</span><span class="pln"> marker </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">Marker</span><span class="pun">({</span><span class="pln"><br>&nbsp; &nbsp; position</span><span class="pun">:</span><span class="pln"> coords</span><span class="pun">,</span><span class="pln"><br>&nbsp; &nbsp; map</span><span class="pun">:</span><span class="pln"> map<br>&nbsp; </span><span class="pun">});</span><span class="pln"><br></span><span class="pun">}</span><span class="pln"><br></span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">async</span><span class="pln"> </span><span class="atn">defer</span><span class="pln"><br>&nbsp;</span><span class="atn">src</span><span class="pun">=</span><span class="atv">"https://maps.googleapis.com/maps/api/js?key=</span><var class="apiparam replaceable-credential" data-tooltip-align="b,c" data-tooltip="Click to insert your credentials" aria-label="Click to insert your credentials"><span class="atv">YOUR_API_KEY</span></var><span class="atv">&amp;callback=initMap"</span><span class="tag">&gt;</span><span class="pln"><br></span><span class="tag">&lt;/script&gt;</span>
+        </pre>
+
+        <h4>Understanding the Code</h4>
+        <p>In the code below, the <code class="light">script</code> loads the API from the specified URL.</p>
+        <pre class="prettyprint notranslate lang-html"><div class="devsite-code-button-wrapper"><div class="devsite-code-button gc-analytics-event material-icons devsite-dark-code-button" data-category="Site-Wide Custom Events" data-label="Dark Code Toggle" track-type="exampleCode" track-name="darkCodeToggle" data-tooltip-align="b,c" data-tooltip="Light code theme" aria-label="Dark code theme" data-title="Dark code theme"></div><div class="devsite-code-button gc-analytics-event material-icons devsite-click-to-copy-button" data-category="Site-Wide Custom Events" data-label="Click To Copy" track-type="exampleCode" track-name="clickToCopy" data-tooltip-align="b,c" data-tooltip="Click to copy" aria-label="Click to copy" data-title="Click to copy"></div></div><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">async</span><span class="pln"> </span><span class="atn">defer</span><span class="pln"><br>&nbsp; </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"https://maps.googleapis.com/maps/api/js?key=</span><var class="apiparam replaceable-credential" data-tooltip-align="b,c" data-tooltip="Click to insert your credentials" aria-label="Click to insert your credentials"><span class="atv">YOUR_API_KEY</span></var><span class="atv">&amp;callback=initMap"</span><span class="tag">&gt;</span><span class="pln"><br></span><span class="tag">&lt;/script&gt;</span></pre>
+        <p>In the above code, the <code class="light">callback</code> parameter executes the <code class="light">initMap</code> function after the API loads. The <code class="light">async</code> attribute allows the browser to continue rendering the rest of your page while the API loads. The <code class="light">key</code> parameter contains your API key.</p>
+
+        <p>The code below contains the <code class="light">initMap</code> function that initializes and adds the map when the web page loads. Use a <code class="light">script</code> tag to include your own JavaScript which contains the <code class="light">initMap</code> function.</p>
+
+        <p>Add the <code class="light">getElementById()</code> function to find the map <code class="light">div</code> on the web page.</p>
+
+        <p>The code below constructs a new Google maps object, and adds properties to the map including the center and zoom level</p>
+
+        <pre class="prettyprint notranslate"><div class="devsite-code-button-wrapper"><div class="devsite-code-button gc-analytics-event material-icons devsite-dark-code-button" data-category="Site-Wide Custom Events" data-label="Dark Code Toggle" track-type="exampleCode" track-name="darkCodeToggle" data-tooltip-align="b,c" data-tooltip="Light code theme" aria-label="Dark code theme" data-title="Dark code theme"></div><div class="devsite-code-button gc-analytics-event material-icons devsite-click-to-copy-button" data-category="Site-Wide Custom Events" data-label="Click To Copy" track-type="exampleCode" track-name="clickToCopy" data-tooltip-align="b,c" data-tooltip="Click to copy" aria-label="Click to copy" data-title="Click to copy"></div></div><span class="pun">{</span><span class="pln"><br>&nbsp; </span><span class="kwd">var</span><span class="pln"> coords </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="pln">lat</span><span class="pun">:</span><span class="pln"> </span><span class="lit">10.3157</span><span class="pun">,</span><span class="pln"> lng</span><span class="pun">:</span><span class="pln"> </span><span class="lit">123.8854</span><span class="pun">};</span><span class="pln"><br><br>&nbsp; </span><span class="kwd">var</span><span class="pln"> map </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">Map</span><span class="pun">(</span><span class="pln">document</span><span class="pun">.</span><span class="pln">getElementById</span><span class="pun">(</span><span class="str">'map'</span><span class="pun">),</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; zoom</span><span class="pun">:</span><span class="pln"> </span><span class="lit">4</span><span class="pun">,</span><span class="pln"><br>&nbsp; &nbsp; center</span><span class="pun">:</span><span class="pln"> coords<br>&nbsp; </span><span class="pun">});</span><span class="pln"><br></span><span class="pun">}</span></pre>
+
+        <p>In the above code, <code class="light">new google.maps.Map()</code> creates a new Google maps object. The <code class="light">center</code> property tells the API where to center the map. The map coordinates are set in the order: <strong>latitude</strong>, <strong>longitude</strong>.</p>
+
+        <p>The <code class="light">zoom</code> property specifies the zoom level for the map. Zoom: 0 is the lowest zoom, and displays the entire earth. Set the zoom value higher to zoom in to the earth at higher resolutions.</p>
+
+        <p>The code below puts a marker on the map. The <code class="light">position</code> property sets the position of the marker.</p>
+
+        <pre class="prettyprint notranslate divider"><div class="devsite-code-button-wrapper"><div class="devsite-code-button gc-analytics-event material-icons devsite-dark-code-button" data-category="Site-Wide Custom Events" data-label="Dark Code Toggle" track-type="exampleCode" track-name="darkCodeToggle" data-tooltip-align="b,c" data-tooltip="Light code theme" aria-label="Dark code theme" data-title="Dark code theme"></div><div class="devsite-code-button gc-analytics-event material-icons devsite-click-to-copy-button" data-category="Site-Wide Custom Events" data-label="Click To Copy" track-type="exampleCode" track-name="clickToCopy" data-tooltip-align="b,c" data-tooltip="Click to copy" aria-label="Click to copy" data-title="Click to copy"></div></div><span class="kwd">var</span><span class="pln"> marker </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">Marker</span><span class="pun">({</span><span class="pln"><br>&nbsp; position</span><span class="pun">:</span><span class="pln"> coords</span><span class="pun">,</span><span class="pln"><br>&nbsp; map</span><span class="pun">:</span><span class="pln"> map<br></span><span class="pun">});</span></pre>
+
+        <h4>Get an API key</h4>
+        <p>This section explains how to authenticate your app to the Google Maps JavaScript API using your own API key.</p>
+        <p>Follow these steps to get an API key:</p>
+        <ol>
+          <li>
+          Go to the <a class="link" target="_blank" class="gc-analytics-event" data-category="getKey" data-action="linkClick" data-label="body" href="https://console.developers.google.com/flows/enableapi?apiid=maps_backend,geocoding_backend,directions_backend,distance_matrix_backend,elevation_backend,places_backend&amp;reusekey=true" target="_blank">Google API Console</a>.
+          </li>
+          <li>
+            Create or select a project.
+          </li>
+          <li>Click <strong>Continue</strong> to enable the API and any related services.</li>
+          <li>On the <strong>Credentials</strong> page, get an <strong>API key</strong>
+              (and set the API key restrictions).
+              Note: If you have an existing unrestricted API key, or a key with browser
+              restrictions, you may use that key.</li>
+          <li>To prevent quota theft,
+              <a class="link" target="_blank" href="https://support.google.com/googleapi/answer/6310037">secure your API key following these best practices</a>.</li>
+          <li>(Optional) Enable billing. See <a class="link" target="_blank" href="https://developers.google.com/maps/documentation/javascript/usage">Usage Limits</a>
+              for more information.</li>
+          <li>Copy the entire code of this tutorial from this page, to your text editor.
+              If you don't already have a text editor, here are some recommendations:
+              You can use: Notepad++ (for Windows); TextEdit (for macOS);
+              gedit, KWrite, among others (for Linux machines).</li>
+          <li>Replace the value of the <code>key</code> parameter in the URL with your own API key
+              (that's the API key that you've just obtained).
+          <pre class="prettyprint notranslate lang-html"><div class="devsite-code-button-wrapper"><div class="devsite-code-button gc-analytics-event material-icons devsite-dark-code-button" data-category="Site-Wide Custom Events" data-label="Dark Code Toggle" track-type="exampleCode" track-name="darkCodeToggle" data-tooltip-align="b,c" data-tooltip="Light code theme" aria-label="Dark code theme" data-title="Dark code theme"></div><div class="devsite-code-button gc-analytics-event material-icons devsite-click-to-copy-button" data-category="Site-Wide Custom Events" data-label="Click To Copy" track-type="exampleCode" track-name="clickToCopy" data-tooltip-align="b,c" data-tooltip="Click to copy" aria-label="Click to copy" data-title="Click to copy"></div></div><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">async</span><span class="pln"> </span><span class="atn">defer</span><span class="pln"><br>&nbsp; </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"https://maps.googleapis.com/maps/api/js?key=</span><var class="apiparam replaceable-credential" data-tooltip-align="b,c" data-tooltip="Click to insert your credentials" aria-label="Click to insert your credentials"><span class="atv">YOUR_API_KEY</span></var><span class="atv">&amp;callback=initMap"</span><span class="tag">&gt;</span><span class="pln"><br></span><span class="tag">&lt;/script&gt;</span></pre></li>
+          <li>Save this file with a name that ends with <strong>.html</strong>,
+              like <strong>google-maps.html</strong>.</li>
+          <li>Load the HTML file in a web browser by dragging it from your desktop onto
+              your browser. Alternatively, double-clicking the file works on most operating
+              systems.</li>
+</ol>
+      </div>
+    </div>
+  </template>
+
+  <script>
+    class MyView3 extends Polymer.Element {
+      static get is() { return 'my-view3'; }
+    }
+
+    window.customElements.define(MyView3.is, MyView3);
+  </script>
+</dom-module>

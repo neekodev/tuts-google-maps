@@ -23,9 +23,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/google-map/google-map.html">
 <link rel="import" href="my-icons.html">
 
-<link rel="lazy-import" href="my-view1.html">
-<link rel="lazy-import" href="my-view2.html">
-<link rel="lazy-import" href="my-view3.html">
+<link rel="lazy-import" href="intro.html">
+<link rel="lazy-import" href="simple-map.html">
+<link rel="lazy-import" href="markers.html">
+<link rel="lazy-import" href="more-info.html">
 <link rel="lazy-import" href="my-view404.html">
 
 <dom-module id="my-app">
@@ -102,7 +103,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <div class="sidenav-header">Basics</div>
           <a name="intro" href="[[rootPath]]intro">Introduction</a>
           <a name="simple-map" href="[[rootPath]]simple-map">Simple Map</a>
-         <!-- <a name="view3" href="[[rootPath]]view3">View Three</a> -->
+          <a name="markers" href="[[rootPath]]markers">Markers</a>
+          <a name="map-types" href="[[rootPath]]map-types">Map Types</a>
+          <a name="localize-map" href="[[rootPath]]localize-map">Localizing the Map</a>
+          <a name="all-folks" href="[[rootPath]]all-folks">That's all folks!</a>
         </iron-selector>
       </app-drawer>
 
@@ -123,7 +127,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             role="main">
           <my-view1 name="intro"></my-view1>
           <my-view2 name="simple-map"></my-view2>
-          <my-view3 name="view3"></my-view3>
+          <my-view3 name="markers"></my-view3>
+          <my-view4 name="all-folks"></my-view4>
+          <my-view5 name="map-types"></my-view5>
+          <my-view6 name="localize-map"></my-view6>
           <my-view404 name="view404"></my-view404>
         </iron-pages>
       </app-header-layout>
